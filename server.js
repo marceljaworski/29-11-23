@@ -9,8 +9,12 @@ server.listen(3000)
 
 server.get("/users", (request, response) => {
     const userName = users.find(user => user.first_name === request.query.name)
+    const lastName = users.find(user => user.last_name === request.query.name)
     if (userName) {
         return response.json(userName)
+    }
+    if (lastName) {
+        return response.json(lastName)
     }
     response.json(users)
 })
