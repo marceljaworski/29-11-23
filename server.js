@@ -27,7 +27,7 @@ server.get("/users/:id", (request, response) => {
         return response.send("id is not a number")
     }
     if(!user){
-        return response.send("not found")
+        return response.send("user not found")
     }
 
     response.json(user)
